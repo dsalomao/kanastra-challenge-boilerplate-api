@@ -27,3 +27,45 @@
         <li>Another for using the data saved to the DB from those files to create payment tickets pdfs and send them via emails</li>
     </ul>
 </p>
+
+### Installation
+
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/dsalomao/kanastra-challenge-boilerplate-api.git
+    ```
+2.  Install the packages
+
+    ```sh
+    composer install
+    ```
+
+3.  Build Docker Containers
+
+    ```sh
+    sail up --build
+    ```
+
+    or
+
+    ```sh
+    ./vendor/bin/sail up --build
+    ```
+
+4.  generate .enb
+
+    ```sh
+    create a new .env file based in .env.example
+    run php artisan key:generate
+    ```
+
+5.  config env variables
+
+    ```sh
+    The application uses some environment variables to work properly that can be custom edited for your dev environment:
+    - Laravel Sanctum (these variables coordinate the cors services to allow or deny access to the application):
+        - APP_URL=http://localhost:80
+        - FRONTEND_URL=http://localhost:8888
+        - SANCTUM_STATEFUL_DOMAINS=localhost:8888
+        - SESSION_DOMAIN=localhost
+    ```
