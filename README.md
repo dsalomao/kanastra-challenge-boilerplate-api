@@ -64,22 +64,57 @@
     ```sh
     The application uses some environment variables to work properly
     that can be edited for your dev environment:
+    ```
+
+    ```
     - Laravel Sanctum :
-    ```
+        (these variables coordinate the cors services to allow or deny access to the application)
+        (they should reflect your front end and back end domains and ports)
 
-    ```sh
-    (these variables coordinate the cors services
-    to allow or deny access to the application)
-    ```
-
-    ```sh
-    (they should reflect your front end and back end domains and ports)
-    ```
-
-    ````sh
         - APP_URL=http://localhost:80
         - FRONTEND_URL=http://localhost:8888
         - SANCTUM_STATEFUL_DOMAINS=localhost:8888
         - SESSION_DOMAIN=localhost
     ```
-    ````
+
+    ```sh
+    - DB connection:
+        The default we use here is for the sail docker container
+
+        - DB_CONNECTION=mysql
+        - DB_HOST=mysql
+        - DB_PORT=3306
+        - DB_DATABASE=kanastra
+        - DB_USERNAME=root
+        - DB_PASSWORD=password
+    ```
+
+    ```sh
+    - Mailtrap:
+        (For testing the ProcessTickets Job)
+
+        - MAIL_MAILER=smtp
+        - MAIL_HOST=sandbox.smtp.mailtrap.io
+        - MAIL_PORT=2525
+        - MAIL_USERNAME=your_mailtrap_account_info
+        - MAIL_PASSWORD=your_mailtrap_account_info
+        - MAIL_ENCRYPTION=null
+        - MAIL_FROM_ADDRESS="dsalomao@kanastratest.com"
+        - MAIL_FROM_NAME="${APP_NAME}"
+    ```
+
+6.  Migrate Database
+
+    ```sh
+    Migrate the database inside sail container
+    ```
+
+    ```sh
+    sail artisan migrate
+    ```
+
+    or
+
+    ```sh
+    ./vendor/bin/sail artisan migrate
+    ```
