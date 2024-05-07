@@ -118,3 +118,12 @@
     ```sh
     ./vendor/bin/sail artisan migrate
     ```
+
+7.  Testing
+
+    ```sh
+    After uploading any files you can run the command
+    sail artisan queue:work --queue=files,emails
+    to run the workers, process the uploaded files and send the payment tickets for the data
+    inside the files
+    ```
