@@ -52,7 +52,7 @@
     ./vendor/bin/sail up --build
     ```
 
-4.  generate .enb
+4.  generate .env
 
     ```sh
     create a new .env file based in .env.example
