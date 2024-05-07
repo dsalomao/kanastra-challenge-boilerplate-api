@@ -9,7 +9,9 @@
   <h3 align="center">Dasalomao Kanastra Chalenge - (Laravel Back End API)</h3>
 
   <p align="center">
-     This application is csv uploader and upload history observer.
+     This application an API with two end-points beeing:
+        - A upload csv file.
+        - Uploaded csv (batch) files list.
     <br />
   </p>
 </p>
