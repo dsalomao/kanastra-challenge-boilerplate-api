@@ -62,8 +62,12 @@
 5.  config env variables
 
     ```sh
-    The application uses some environment variables to work properly that can be custom edited for your dev environment:
-    - Laravel Sanctum (these variables coordinate the cors services to allow or deny access to the application):
+    The application uses some environment variables to work
+    properly that can be custom edited for your dev environment:
+    (these variables coordinate the cors services
+    to allow or deny access to the application)
+    (they should reflect your front end and back end domains and ports)
+    - Laravel Sanctum :
         - APP_URL=http://localhost:80
         - FRONTEND_URL=http://localhost:8888
         - SANCTUM_STATEFUL_DOMAINS=localhost:8888
