@@ -9,18 +9,19 @@
   <h3 align="center">Dasalomao Kanastra Chalenge - (Laravel Back End API)</h3>
 
   <p align="center">
-     This application an API with two end-points beeing:
+     This application is an API with two end-points beeing:
+    <br />
     <br />
   </p>
-    <ul align="center">
-        <li>- A upload csv file.</li>
-        <li>- Uploaded csv (batch) files list.</li>
+    <ul>
+        <li>A upload csv file.</li>
+        <li>Uploaded csv (batch) files list.</li>
     </ul>
-    <p align="center">
+    <p>
         It also contains two queueable jobs:
     </p>
-    <ul align="center">
-        <li>- One for processing the uploaded files in batches to a 'files' queue</li>
-        <li>- Another for using the data saved to the DB from those files to create payment tickets pdfs and send them via emails</li>
+    <ul>
+        <li>One for processing the uploaded files in batches to a 'files' queue</li>
+        <li>Another for using the data saved to the DB from those files to create payment tickets pdfs and send them via emails</li>
     </ul>
 </p>
