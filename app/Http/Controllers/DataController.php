@@ -12,7 +12,7 @@ class DataController extends Controller
     {
         // If something went wrong with the uploded file
         if (!$request->hasFile('file') || !$request->file('file')->isValid()) {
-            return response()->json(['success' => true], 422);
+            return response()->json(['success' => false], 422);
         }
 
         $batch = $this->storeFile($request->file('file'));

@@ -43,7 +43,6 @@ class DataTicketNotification extends Notification
         return (new MailMessage)
                     ->subject('Your Kanastra Ticket')
                     ->line('Here is your latest ticket.')
-                    ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!')
                     ->attachData($this->pdf, 'ticket.pdf', [
                         'mime' => 'application/pdf',

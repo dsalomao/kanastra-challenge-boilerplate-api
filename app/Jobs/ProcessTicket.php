@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Mail\SendDataTicketEmail;
 use App\Models\Data;
 use App\Notifications\DataTicketNotification;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -13,7 +12,6 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\Middleware\RateLimited;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Mail;
 
 class ProcessTicket implements ShouldQueue
 {
