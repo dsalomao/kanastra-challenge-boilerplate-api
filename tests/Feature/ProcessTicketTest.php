@@ -19,12 +19,10 @@ class ProcessTicketTest extends TestCase
         Queue::fake();
         Notification::fake();
 
-        $data = Data::factory()->create(); // Ensure you have a factory for Data model
+        $data = Data::factory()->create();
 
-        // Dispatch the job
         ProcessTicket::dispatch($data);
 
-        // Assert the job was pushed to the queue
         Queue::assertPushed(ProcessTicket::class, function ($job) use ($data) {
             return $job->data->id === $data->id;
         });

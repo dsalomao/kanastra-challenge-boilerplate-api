@@ -39,18 +39,14 @@ class FileUploadTest extends TestCase
      /** @test */
     public function it_handles_valid_file_upload_successfully()
     {
-        // Create a fake file
         $file = UploadedFile::fake()->create('document.csv', 2048); // 2MB CSV
 
-        // Send a post request with the valid file
         $response = $this->json('POST', 'api/data', ['file' => $file]);
 
-        // Assert Bus::batch was called
         Bus::assertBatched(function ($batch) {
              return $batch->name == 'files' && $batch->jobs->count() === 0;
         });
 
-        // Since the batch is fresh and likely hasn't processed, we simulate a successful batch with fake data
         $mockBatch = ['name' => 'files'];
         $response->assertStatus(200);
         $response->assertJson(['success' => true, 'data' => $mockBatch]);
